@@ -1,0 +1,130 @@
+openapi: 3.0.1
+info:
+  title: springdoc-openapi test0
+  description: test springdoc-openapi support
+  contact:
+    name: irina
+    url: /foo
+    email: irina.petrovskaya@jetbrains.com
+  license:
+    name: open
+    url: /bar
+  version: 1.5.12
+servers:
+- url: http://localhost:8080
+tags:
+- name: Memo API
+  description: memo description
+paths:
+  /api/memos/{id}:
+    get:
+      tags:
+      - Memo API
+      operationId: findById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Memo'
+      security:
+      - api: []
+    put:
+      tags:
+      - Memo API
+      operationId: update
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Memo'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Memo'
+      security:
+      - api: []
+    delete:
+      tags:
+      - Memo API
+      operationId: delete
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "204":
+          description: No Content
+      security:
+      - api: []
+  /api/memos/add:
+    post:
+      tags:
+      - Memo API
+      operationId: save
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Memo'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Memo'
+      security:
+      - api: []
+  /api/memos/all:
+    get:
+      tags:
+      - Memo API
+      operationId: findAll
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Memo'
+      security:
+      - api: []
+components:
+  schemas:
+    Memo:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        category:
+          type: string
+  securitySchemes:
+    api:
+      type: http
+      in: header
+      scheme: basic
