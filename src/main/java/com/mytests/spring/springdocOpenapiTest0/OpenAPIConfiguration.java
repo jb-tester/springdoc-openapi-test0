@@ -20,4 +20,8 @@ import io.swagger.v3.oas.annotations.servers.Server;
 )
 @SecurityScheme(name = "api", scheme = "basic", type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
 public class OpenAPIConfiguration {
+    
+    // class is shown as not used   (submitted)
+    // no references for properties (submitted)
+    // @SecurityScheme#name - reference to @SecurityRequirement#name
 }

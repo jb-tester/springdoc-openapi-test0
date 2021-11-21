@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequestMapping("/api/memos")
-@Tag(name = "Memo API", description = "memo description")
-@SecurityRequirement(name = "api")
+@Tag(name = "Memo API", description = "memo description")  // ignored
+@SecurityRequirement(name = "api")    // ignored
 public interface MemoApi {
 
     @GetMapping("/all")
-    @ResponseStatus(code = HttpStatus.OK)
+    @ResponseStatus(code = HttpStatus.OK)   // ignored - https://youtrack.jetbrains.com/issue/IDEA-266635
     List<Memo> findAll();
 
     @GetMapping("/{id}")
