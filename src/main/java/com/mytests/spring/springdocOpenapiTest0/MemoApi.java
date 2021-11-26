@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequestMapping("/api/memos")
 @Tag(name = "Memo API", description = "memo description")  // ignored
-@SecurityRequirement(name = "api")    // ignored
+@SecurityRequirement(name = "test0-api")    // ignored
 public interface MemoApi {
 
     @GetMapping("/all")

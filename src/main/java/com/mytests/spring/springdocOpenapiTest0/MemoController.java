@@ -1,11 +1,12 @@
 package com.mytests.spring.springdocOpenapiTest0;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
-
+@RequestMapping("/api/memos")
 @RestController
 public class MemoController implements MemoApi {
 

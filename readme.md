@@ -1,3 +1,5 @@
+### First Test: properties usage in @OpenAPIDefinition mostly
+
 Documentation: https://springdoc.org/
 
 
@@ -5,6 +7,5 @@ Documentation: https://springdoc.org/
 - @OpenAPIDefinition-annotated class is shown as unused (submitted)
 - no references for properties in @OpenAPIDefinition annotation(submitted)
 - @SecurityScheme#name - no reference to @SecurityRequirement#name
-- @Tag annotation is ignored on openapi generating for endpoints
 - @SecurityRequirement is ignored on openapi generating for endpoints
-- how can i navigate to springdoc.info.contact.url or swagger url for the application?
+- how can i navigate to openapi documentation (springdoc.api-docs.path) or swagger-ui (springdoc.swagger-ui.path) url for the application? (submitted)

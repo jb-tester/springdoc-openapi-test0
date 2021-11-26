@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                 license = @License(name = "${springdoc.info.license.name}", url = "${springdoc.info.license.url}")),
         servers = @Server(url = "${springdoc.servers.url}")
 )
-@SecurityScheme(name = "api", scheme = "basic", type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
+@SecurityScheme(name = "test0-api", scheme = "basic", type = SecuritySchemeType.HTTP, in = SecuritySchemeIn.HEADER)
 public class OpenAPIConfiguration {
     
     // class is shown as not used   (submitted)
